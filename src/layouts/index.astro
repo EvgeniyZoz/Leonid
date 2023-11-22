@@ -1,0 +1,26 @@
+---
+import Header from "./partials/Header.astro";
+import Footer from "./partials/Footer.astro";
+import "../styles/main.scss";
+const { title, description, noindex, canonical } = Astro.props;
+---
+<html lang="en" class="h-full">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<!--<link rel="icon" type="image/svg+xml" href="/favicon.png" />-->
+	<meta name="generator" content={Astro.generator} />
+	<title>{title}</title>
+</head>
+
+<body class="group/body min-h-screen flex flex-col">
+	<Header />
+	<slot />
+	<Footer />
+	<script is:inline src="/js/nice-select2.js"></script>
+	<script is:inline src="/js/masonry.pkgd.min.js"></script>
+	<script is:inline src="/js/script.js"></script>
+</body>
+
+</html>
